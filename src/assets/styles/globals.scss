@@ -1,0 +1,14 @@
+@import url(./common.scss);
+@import url(./reset.scss);
+
+
+body {
+    font: 16px/1.4 'Roboto', sans-serif;
+    background: #070e16;
+    min-height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
