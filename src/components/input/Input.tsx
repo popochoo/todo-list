@@ -5,6 +5,13 @@ import styles from "./input.module.scss";
 export function Input({ addTask }: InputProps) {
   const [inputValue, setInputValue] = useState("");
 
+  const handleAddTask = () => {
+    if (inputValue.trim() === "") return;
+
+    addTask(inputValue.trim());
+    setInputValue("");
+  };
+
   return (
     <div className={styles.input}>
       <input
@@ -12,10 +19,11 @@ export function Input({ addTask }: InputProps) {
         className={styles.inputValue}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && handleAddTask()}
         placeholder="Названание задачи"
       />
       <button
-        onClick={() => addTask(inputValue)}
+        onClick={handleAddTask}
         aria-label="add"
         className={styles.inputButton}
       ></button>
