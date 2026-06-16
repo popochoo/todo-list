@@ -1,3 +1,5 @@
+import { MainContainer } from "./components/mainContainer/MainContainer";
+
 export function App() {
-  return <div>APP comoonentn</div>;
+  return <MainContainer />;
 }
