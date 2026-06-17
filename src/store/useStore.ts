@@ -1,9 +1,22 @@
 import { create } from "zustand";
-import type { TodoStore } from "../types/task.interface";
+import type { Task, TodoStore } from "../types/task.interface";
 import { generateId } from "../utils";
+import { localStorageUpdate } from "./middleware";
 
-export const useStore = create<TodoStore>((set, get) => ({
-    tasks: [],
+const STORAGE_KEY = "todo-tasks-storage";
+
+const getInitialState = (): { tasks: Task[] } => {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY)
+
+        return saved ? JSON.parse(saved) : { tasks: [] }
+    } catch {
+        return { tasks: [] }
+    }
+}
+
+export const useStore = create<TodoStore>(localStorageUpdate<TodoStore>(STORAGE_KEY)((set, get) => ({
+    tasks: getInitialState().tasks || [],
     createTask: (title: string) => {
         const { tasks } = get()
 
@@ -31,4 +44,4 @@ export const useStore = create<TodoStore>((set, get) => ({
             tasks: tasks.filter(task => task.id !== id)
         })
     }
-}))
+})))
