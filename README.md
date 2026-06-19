@@ -37,4 +37,4 @@
 ## 🌐 Ссылка на деплой
 
 Рабочая версия проекта развернута и доступна в сети:
-👉 [todo-list-topaz-two-51.vercel.app](https://vercel.app)
+👉 [todo-list-topaz-two-51.vercel.app](https://todo-list-topaz-two-51.vercel.app/)
