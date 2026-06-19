@@ -1,10 +1,6 @@
-name: Qlty Code Analysis
+name: Code Quality
 
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+on: [push, pull_request]
 
 jobs:
   qlty:
@@ -12,10 +8,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Важно для Git-aware проверок Qlty
 
+      # Устанавливаем официальный бесплатный CLI инструмент
+      - name: Install Qlty CLI
+        run: curl https://qlty.sh | sh
+
+      # Запускаем локальный анализ БЕЗ отправки токенов в облако
       - name: Run Qlty Analysis
-        uses: qltysh/qlty-action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        run: qlty run
