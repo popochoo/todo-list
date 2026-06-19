@@ -1,0 +1,21 @@
+name: Qlty Code Analysis
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  qlty:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Важно для Git-aware проверок Qlty
+
+      - name: Run Qlty Analysis
+        uses: qltysh/qlty-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
