@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- Бейдж Code Climate. Замените YOUR_GITHUB_USERNAME и YOUR_REPO_NAME на актуальные данные после настройки проекта в Code Climate -->
+[![Maintainability](https://codeclimate.com)](https://codeclimate.com)
 
-Currently, two official plugins are available:
+Простое и удобное веб-приложение для управления повседневными задачами, созданное в рамках производственной практики колледжа. Проект позволяет пользователям добавлять, редактировать, группировать и отмечать выполненные дела в интерактивном режиме. Главная цель разработки — закрепление навыков создания современных SPA-приложений с использованием строго типизированного стека технологий.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠 Стек технологий
 
-## React Compiler
+* **Frontend:** React, TypeScript, Vite
+* **Styles:** SCSS
+* **Backend / DB:** Отсутствует (работа с данными происходит на стороне клиента / LocalStorage)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Как запустить локально
 
-## Expanding the ESLint configuration
+Для запуска проекта на вашем компьютере выполните следующие шаги:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/popochoo/todo-list.git
+   ```
+2. Перейдите в папку проекта:
+   ```bash
+   cd todo-list
+   ```
+3. Установите зависимости:
+   ```bash
+   yarn install
+   ```
+   *(если вы используете npm, введите `npm install`)*
+4. Запустите сервер для разработки:
+   ```bash
+   yarn dev
+   ```
+   *(или `npm run dev`)*
+5. Откройте локальную ссылку в браузере (обычно это `http://localhost:5173`).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🌐 Ссылка на деплой
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Рабочая версия проекта развернута и доступна в сети:
+👉 [todo-list-topaz-two-51.vercel.app](https://vercel.app)

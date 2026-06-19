@@ -76,3 +76,9 @@ mode = "comment"
 
 [[plugin]]
 name = "trufflehog"
+
+[[plugin]]
+name = "eslint"
+version = "10.3.0"       
+package_file = "package.json"
+
