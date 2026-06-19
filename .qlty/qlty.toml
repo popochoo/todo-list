@@ -62,12 +62,6 @@ default = true
 
 
 [[plugin]]
-name = "eslint"
-version = "10.4.1"
-package_file = "package.json"
-package_filters = ["eslint"]
-
-[[plugin]]
 name = "osv-scanner"
 
 [[plugin]]
@@ -76,9 +70,3 @@ mode = "comment"
 
 [[plugin]]
 name = "trufflehog"
-
-[[plugin]]
-name = "eslint"
-version = "10.3.0"       
-package_file = "package.json"
-
